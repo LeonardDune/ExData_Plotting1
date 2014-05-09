@@ -1,0 +1,8 @@
+myData <- read.table("household_power_consumption.txt", header = TRUE, sep =";", na.strings = "?")
+myData$Date <- as.Date(myData$Date, "%d/%m/%Y")
+myData1 <- subset(myData, Date == as.Date("2007-02-01"))
+myData2 <- subset(myData, Date == as.Date("2007-02-02"))
+myData <- rbind(myData1, myData2)
+hist(myData$Global_active_power, main = "Global Active Power", col="red", xlab = "Global active power (kilowatts)", ylab = "Frequency", )
+dev.copy(png, "plot1.png")
+dev.off()
