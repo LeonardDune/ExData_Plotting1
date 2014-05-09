@@ -7,6 +7,6 @@ myData$DateTime <- strptime(paste(myData$Date, myData$Time), "%Y-%m-%d %H:%M:%S"
 with(myData, plot(DateTime, Sub_metering_1, main = "", type = "l", xlab = "", ylab = "Energy sub metering"))
 with(myData, lines(DateTime, Sub_metering_2, col = "blue"))
 with(myData, lines(DateTime, Sub_metering_3, col = "red"))
-legend("topright", pch = 19, col = c("black", "blue", "red"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend("topright", lty = c(1, 1, 1), border = NULL, pch = NULL, seg.len = 3, cex = 1, col = c("black", "blue", "red"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 dev.copy(png, "plot3.png")
 dev.off()
